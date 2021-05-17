@@ -131,7 +131,7 @@ class UAV_control():
                 self.set_pose.header.stamp = rospy.Time.now()
                 self.set_pose_publisher.publish(self.set_pose)
                 rate.sleep()
-            except rospy.ROSInterruptException:
+            except rospy.ROSException:
                 return
 
     def update_set_pose(self, pose):
